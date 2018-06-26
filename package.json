@@ -1,0 +1,47 @@
+{
+  "name": "tiesdb-client",
+  "version": "0.0.1",
+  "description": "Ties.DB client",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/",
+    "lint": "eslint lib/ index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tiesnetwork/ties.db-client"
+  },
+  "keywords": [
+    "tql",
+    "tiesdb",
+    "ties.db",
+    "database",
+    "decentralized"
+  ],
+  "dependencies": {
+    "bigdecimal": "^0.6.1",
+    "ethereumjs-util": "^5.2.0",
+    "uuid": "^3.2.1",
+    "uuid-parse": "^1.0.0",
+    "websocket": "^1.0.26"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "gulp": "^3.6.2",
+    "gulp-esformatter": "^7.0.0",
+    "gulp-fixmyjs": "1.0.2",
+    "gulp-jshint": "^2.1.0",
+    "jsfmt": "^0.5.3",
+    "jshint-stylish": "^2.2.1",
+    "mocha": "~5.1.0"
+  },
+  "license": "LGPLv3",
+  "bugs": {
+    "url": "https://github.com/tiesnetwork/ties.db-client/issues"
+  },
+  "homepage": "https://github.com/tiesnetwork/ties.db-client",
+  "author": "Dmitry Kochin <k@tiesdb.com>"
+}
