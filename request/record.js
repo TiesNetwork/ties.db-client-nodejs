@@ -1,5 +1,4 @@
 const Field = require('./field');
-const createKeccakHash = require('keccak');
 const codec = require('./codec');
 const Tag = codec.Tag;
 const C = require('./constants');
@@ -174,7 +173,9 @@ class Record {
     static fromRecollectionResult(tagResult, columnsOrder) {
         let record = new Record();
         record.fillFromEntry(tagResult.getChild('Entry'), columnsOrder);
-        record.fillFromComputed(tagResult.getChild('RecollectionCompute'), columnsOrder);
+        let computed = tagResult.getChild('RecollectionCompute');
+        if(computed)
+            record.fillFromComputed(computed, columnsOrder);
         return record;
     }
 

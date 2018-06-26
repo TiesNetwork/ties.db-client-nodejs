@@ -100,7 +100,6 @@ function decode(/*Buffer*/ data, myAddress) {
     let stack = [new Tag()];
 
     decoder.on('data', function(chunk) {
-        decoder;
         if(chunk[0] === 'start') {
             let item = stack[stack.length - 1];
 

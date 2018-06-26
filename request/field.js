@@ -44,6 +44,17 @@ function bigIntToBuffer(bi) {
     return Buffer.from(hex, 'hex');
 }
 
+function bufferToBigInt(buf) {
+    let str = buf.toString('hex');
+    let bi = new BD.BigInteger(str, 16);
+    if(buf[0]&0x80){
+        //It is 2-complement negative number
+        let bz = BD.BigInteger.ZERO().setBit(buf.length*8);
+        bi = bi.subtract(bz);
+    }
+    return bi;
+}
+
 function _writeBigDecimal(value){
     let bd = value;
     if(!(bd instanceof BD.BigDecimal))
@@ -105,7 +116,7 @@ function _readBigDecimal(buffer){
     if(sgn)
         scale_val = -scale_val;
 
-    let bi = new BD.BigInteger(buffer.slice(scale.length));
+    let bi = bufferToBigInt(buffer.slice(scale.length));
     let bd = new BD.BigDecimal(bi, scale_val);
     return bd;
 }
@@ -124,7 +135,10 @@ function _decodeValue(type, buffer){
             return bd.floatValue();
         }
         case 'double':
-            return tools.readFloat(buffer);
+        {
+            let bd = _readBigDecimal(buffer);
+            return bd.doubleValue();
+        }
         case 'decimal':
         case 'duration':
         {
