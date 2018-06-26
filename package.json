@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tiesnetwork/ties.db-client"
+    "url": "git://github.com/tiesnetwork/ties.db-client-nodejs"
   },
   "keywords": [
     "tql",
@@ -40,8 +40,8 @@
   },
   "license": "LGPLv3",
   "bugs": {
-    "url": "https://github.com/tiesnetwork/ties.db-client/issues"
+    "url": "https://github.com/tiesnetwork/ties.db-client-nodejs/issues"
   },
-  "homepage": "https://github.com/tiesnetwork/ties.db-client",
+  "homepage": "https://github.com/tiesnetwork/ties.db-client-nodejs",
   "author": "Dmitry Kochin <k@tiesdb.com>"
 }
