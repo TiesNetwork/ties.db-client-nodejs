@@ -133,12 +133,12 @@ class Record {
     }
 
     fillFromEntry(tagEntry, columnsOrder) {
-        codec.checkEntry(tagEntry);
+        let hash = codec.checkEntry(tagEntry);
 
         let header = tagEntry.getChild("EntryHeader");
         this.table = header.getChild("EntryTableName").getValue();
         this.tablespace = header.getChild("EntryTablespaceName").getValue();
-        this.prevHash = header.getChild("EntryFldHash").data;
+        this.prevHash = hash;
         this.prevVersion = header.getChild("EntryVersion").getValue();
 
         let flds = tagEntry.getChild("FieldList").getChildren("Field");

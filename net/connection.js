@@ -90,7 +90,6 @@ class Connection {
 
         return new Promise((resolve, reject) => {
             self.requests[requestId] = (response, error) => {
-                response.request = tagRoot;
                 if (response)
                     resolve(response);
                 else

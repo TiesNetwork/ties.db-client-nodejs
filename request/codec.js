@@ -174,7 +174,8 @@ function checkModificationRequest(obj, myAddress){
 
 function checkEntry(entry, myAddress) {
     let header = entry.getChild('EntryHeader');
-    let addr = getSigner(header);
+    let hash = getTagHash(header);
+    let addr = getSigner(header, hash);
     let signer = header.getChild('Signer').data;
     if(Buffer.compare(addr, signer) != 0)
         throw new Error('Entry signature check is failed! Sig: ' + header.getChild('Signature').data.toString('hex').substr(0, 20) + '...');
@@ -182,11 +183,12 @@ function checkEntry(entry, myAddress) {
     checkFields(entry.getChild('FieldList'), header.getChild('EntryFldHash'));
     if(myAddress)
         checkCheques(entry, myAddress);
+
+    return hash;
 }
 
-function getSigner(obj) {
+function getTagHash(obj){
     let children = obj.getChildren();
-    let signature = obj.getChild('Signature').data;
     let keccak = createKeccakHash('keccak256');
     for(let i=0; i<children.length; ++i){
         let child = children[i];
@@ -196,6 +198,13 @@ function getSigner(obj) {
 
     let hash = keccak.digest();
     console.log("Hash of data: " + hash.toString('hex'))
+    return hash;
+}
+
+function getSigner(obj, hash) {
+    let signature = obj.getChild('Signature').data;
+    if(!hash)
+        hash = getTagHash(obj);
 
     let v = signature[64];
     if(v > 28)
