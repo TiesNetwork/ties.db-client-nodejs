@@ -48,9 +48,9 @@ fs.readFile('myreq.proto', async function(err, data) {
         fDuration: 20*86400,
         fFloat: -42803.234e-8,
         fInteger: 423424432,
-        fLong: -278374928374,
+//        fLong: -278374928374,
         fString: "This is UTF-8 строка",
-        fTime: new Date()
+//        fTime: new Date()
     }, types);
 
     //0xe0a61e5ad74fc154927e8412c7f03528134f755e7eb45554eb7a99c2744ac34e
@@ -75,7 +75,7 @@ fs.readFile('myreq.proto', async function(err, data) {
             Id IN (${uuid.toString()})`
     );
 
-    records[0].putValue("fLong", "123");
+    records[0].putValue("fLong", "123", types.fLong);
 
     response = await c.modify(records, Buffer.from('e0a61e5ad74fc154927e8412c7f03528134f755e7eb45554eb7a99c2744ac34e', 'hex'));
 

@@ -85,7 +85,7 @@ function _encodeValue(type, value) {
         case 'integer':
         case 'long':
         case 'bigint':
-            return tools.encodeInteger(value);
+            return tools.encodeSigned(value);
         case 'float':
         case 'double':
         case 'duration':
@@ -97,7 +97,7 @@ function _encodeValue(type, value) {
         case 'binary':
             return Buffer.isBuffer(value) ? value : Buffer.from(value);
         case 'time':
-            return tools.encodeInteger(+value - tools.UNIX_EPOCH_DELAY);
+            return tools.encodeSigned(+value - tools.UNIX_EPOCH_DELAY);
         case 'uuid':
             if(typeof(value) === 'string')
                 value = uuidParse.parse(value);
