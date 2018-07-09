@@ -1,7 +1,7 @@
 const createKeccakHash = require('keccak');
-const BN = require('@tiesdb/ebml').BN;
+const BN = require('universal-ebml').BN;
 const BD = require('bigdecimal');
-const tools = require('@tiesdb/ebml').tools;
+const tools = require('universal-ebml').tools;
 const codec = require('./codec');
 const uuidParse = require('uuid-parse');
 
@@ -97,7 +97,7 @@ function _encodeValue(type, value) {
         case 'binary':
             return Buffer.isBuffer(value) ? value : Buffer.from(value);
         case 'time':
-            return tools.encodeSigned(+value - tools.UNIX_EPOCH_DELAY);
+            return tools.encodeSigned(+value - tools.UNIX_EPOCH_DELAY.toNumber());
         case 'uuid':
             if(typeof(value) === 'string')
                 value = uuidParse.parse(value);
@@ -146,11 +146,11 @@ function _decodeValue(type, buffer){
         }
         case 'string':
         case 'ascii':
-            return Buffer.toString();
+            return buffer.toString();
         case 'binary':
             return buffer;
         case 'time':
-            return new Date(tools.readSigned(buffer) + tools.UNIX_EPOCH_DELAY);
+            return new Date(tools.readSigned(buffer) + tools.UNIX_EPOCH_DELAY.toNumber());
         case 'uuid':
             return uuidParse.unparse(buffer);
         default:
@@ -194,7 +194,7 @@ class Field{
     getValue() {
         if(!this.hasValue())
             throw new Error('The field ' + this.getName() + ' does not have value');
-        if(typeof this.__value == 'undefined')
+        if(this.__value === undefined)
             this.decodeValue();
         return this.__value;
     }
@@ -243,7 +243,7 @@ class Field{
     setBinaryValue(val) {
         this.__binaryValue = val;
         this.__hash = null;
-        this.decodeValue();
+        this.__value = undefined;
     }
 
     setHash(val) {

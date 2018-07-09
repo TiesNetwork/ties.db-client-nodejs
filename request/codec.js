@@ -1,4 +1,4 @@
-let ebml = require('@tiesdb/ebml');
+let ebml = require('universal-ebml');
 let schema = require('./schema.js');
 let etu = require('ethereumjs-util');
 const createKeccakHash = require('keccak');
@@ -85,7 +85,7 @@ class Tag {
         if(this.type === 'm')
             return this.children;
         if(this.data)
-            this.value = tools.convertDataToType(this.data, this.type);
+            this.value = ebml.tools.toType(this.data, this.type);
 
         return this.value;
     }
@@ -197,7 +197,7 @@ function getTagHash(obj){
     }
 
     let hash = keccak.digest();
-    console.log("Hash of data: " + hash.toString('hex'))
+//    console.log("Hash of data: " + hash.toString('hex'))
     return hash;
 }
 
@@ -225,7 +225,7 @@ function computeHashOnData(obj, hash) {
         if(!hash)
             hash = createKeccakHash('keccak256');
         obj.ensureData();
-        console.log('Hashing ' + obj.name + ': ' + obj.data.toString('hex'));
+//        console.log('Hashing ' + obj.name + ': ' + obj.data.toString('hex'));
         hash.update(obj.data);
     }
     return hash;
@@ -296,5 +296,6 @@ module.exports = {
     Tag,
     computeHashOnData,
     computeFieldsHash,
+    getSigner,
     sign,
 };

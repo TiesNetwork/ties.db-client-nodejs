@@ -1,4 +1,4 @@
-﻿let ebml = require('@tiesdb/ebml');
+﻿let ebml = require('universal-ebml');
 ebml.tools.DATE_SCALE = 1; //Use milliseconds for time tags
 
 class TiesDBClient {
@@ -16,6 +16,10 @@ class TiesDBClient {
 
 	get Constants() {
 		return require('./request/constants');
+	}
+
+	get BD() {
+		return require('bigdecimal');
 	}
 
 }

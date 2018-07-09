@@ -337,7 +337,7 @@ let _the_schema = {
 
 };
 
-let Schema = require('@tiesdb/ebml').Schema;
+let Schema = require('universal-ebml').Schema;
 let schema = new Schema(_the_schema);
 
 module.exports = schema;
