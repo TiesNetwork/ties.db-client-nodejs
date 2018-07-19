@@ -1,6 +1,6 @@
 {
   "name": "tiesdb-client",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Ties.DB client",
   "main": "index.js",
   "directories": {
@@ -24,7 +24,7 @@
   "dependencies": {
     "bigdecimal": "^0.6.1",
     "ethereumjs-util": "^5.2.0",
-    "universal-ebml": "^0.2.0",
+    "universal-ebml": "^0.2.2",
     "uuid": "^3.3.2",
     "uuid-parse": "^1.0.0",
     "websocket": "^1.0.26"
