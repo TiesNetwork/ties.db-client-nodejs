@@ -44,6 +44,7 @@ class Connection {
                         throw new Error('Wrong message header from server: ' + header.toString('hex'));
                     let body = data.binaryData.slice(16);
                     let response = codec.decode(body);
+                    console.log(response.toString('xml'));
                     let msgId = response.getChild('MessageId');
                     if(!msgId) {
                         if(response.name === 'Error'){
@@ -85,6 +86,7 @@ class Connection {
 
         let data = codec.encode(tagRoot);
         console.log(tagRoot.name + ': ' + data.toString('hex'));
+        console.log(tagRoot.toString('xml'));
 
         this.connection.sendBytes(Buffer.concat([this.header, data]));
 

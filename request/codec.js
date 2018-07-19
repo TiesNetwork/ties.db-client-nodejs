@@ -89,6 +89,31 @@ class Tag {
 
         return this.value;
     }
+
+    toString(format, indent = '    ', level = 0) {
+        if(format === 'xml'){
+            let idnt = indent.repeat(level);
+            let val;
+            if(this.type === 'm') {
+                let children = (this.children || []).map(tag => tag.toString(format, indent, level + 1));
+                val = `\n${children.join('\n')}\n${idnt}`;
+            }else{
+                if(this.type == 'b') {
+                    val = this.getValue().toString('hex');
+                }else if(this.type == 'd') {
+                    val = this.getValue();
+                    if(!(val instanceof Date))
+                        val = new Date(+val);
+                    val = val.toISOString();
+                }else{
+                    val = this.getValue();
+                }
+            }
+            return `${idnt}<${this.name} type="${this.type}">${val}</${this.name}>`;
+        }else{
+            return super.toString(...arguments);
+        }
+    }
 }
 
 encoder.on('data', function(chunk) {

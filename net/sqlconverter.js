@@ -236,7 +236,7 @@ function getColumnsOrder(tagRecollectionRequest){
 
     for(let col of columns){
         if(col.name === "RetField"){
-            order.fields[col.name] = order.total++;
+            order.fields[col.getValue()] = order.total++;
         }else if(col.name === "RetCompute"){
             order.computed.push(order.total++);
         }else{

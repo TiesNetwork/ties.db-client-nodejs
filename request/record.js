@@ -158,7 +158,7 @@ class Record {
         let flds = tagComputed.getChildren("ComputeField");
         if(flds) {
             for (let i = 0; i < flds.length; ++i) {
-                let field = Field.fromTag(tag);
+                let field = Field.fromTag(flds[i]);
                 let idx;
                 if (columnsOrder) {
                     idx = columnsOrder.computed[i];
