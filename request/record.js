@@ -193,6 +193,17 @@ class Record {
         this.fields = [];
     }
 
+    delete(keyFieldNames){
+        this.prevVersion = -1;
+        for (let i = 0; i < this.fields.length; i++) { 
+            let f = this.fields[i];
+            if(!keyFieldNames.includes(f.name)) {
+                delete this.fields[i];
+                delete this.fieldsByName[f.name];
+            }
+        }
+    }
+
 }
 
 module.exports = Record;
