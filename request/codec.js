@@ -40,9 +40,9 @@ class Tag {
      */
     getChildren(name) {
         if(!this.children)
-            return;
+            return [];
         if(name)
-            return this.__childrenMap[name];
+            return this.__childrenMap[name] || [];
         return this.children;
     }
 
