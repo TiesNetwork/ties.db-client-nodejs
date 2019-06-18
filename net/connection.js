@@ -138,9 +138,11 @@ class Connection {
         let order = sqlConverter.getColumnsOrder(request);
         let results = result.getChildren("RecollectionResult");
         let records = [];
-        for(let r of results){
-            let record = Record.fromRecollectionResult(r, order);
-            records.push(record);
+        if(results){
+            for(let r of results){
+                let record = Record.fromRecollectionResult(r, order);
+                records.push(record);
+            }
         }
 
         return records;
