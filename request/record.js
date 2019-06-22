@@ -10,9 +10,9 @@ class Record {
         this.clearFields();
         this.prevVersion = 0;
         this.prevHash = null;
-        this.signer = null;
         this.tablespace = tablespace;
         this.table = table;
+        this.signer = null;
     }
 
     putField(field, _idx) {
