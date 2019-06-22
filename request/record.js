@@ -10,6 +10,7 @@ class Record {
         this.clearFields();
         this.prevVersion = 0;
         this.prevHash = null;
+        this.signer = null;
         this.tablespace = tablespace;
         this.table = table;
     }
@@ -81,6 +82,10 @@ class Record {
         return fld && fld.getValue();
     }
 
+    getSigner() {
+        return '0x'+this.signer.toString('hex');
+    }
+
     getSortedFieldNames() {
         let names = this.fields.reduce((names, fld) => {
             if(!fld.computed)
@@ -140,6 +145,7 @@ class Record {
         this.tablespace = header.getChild("EntryTablespaceName").getValue();
         this.prevHash = hash;
         this.prevVersion = header.getChild("EntryVersion").getValue();
+        this.signer = header.getChild("Signer").getValue();
 
         let flds = tagEntry.getChild("FieldList").getChildren("Field");
         for(let tag of flds) {
