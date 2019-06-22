@@ -12,6 +12,7 @@ class Record {
         this.prevHash = null;
         this.tablespace = tablespace;
         this.table = table;
+        this.signer = null;
     }
 
     putField(field, _idx) {
@@ -140,6 +141,7 @@ class Record {
         this.tablespace = header.getChild("EntryTablespaceName").getValue();
         this.prevHash = hash;
         this.prevVersion = header.getChild("EntryVersion").getValue();
+        this.signer = header.getChild("Signer").getValue();
 
         let flds = tagEntry.getChild("FieldList").getChildren("Field");
         for(let tag of flds) {

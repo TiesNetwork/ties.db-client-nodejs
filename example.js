@@ -57,7 +57,8 @@ var Record = Client.Record;
     //0xAe65bAf610Bad3F0d71Aa3C3a8110c2d62cbEb19
 
     let c = new Connection();
-    await c.connect('ws://192.168.1.45:8080/websocket');
+//    await c.connect('ws://192.168.1.45:8080/websocket');
+    await c.connect('wss://alpha.tiesdb.com/websocket');
 
 /*    const Builder = require('./request/builder');
     let builder = new Builder([record]);
