@@ -24,6 +24,7 @@ LIMIT\b                                          return 'LIMIT'
 '>'                                              return 'CMP_GREATER'
 '<='                                             return 'CMP_LESSOREQUAL'
 '<'                                              return 'CMP_LESS'
+'LIKE'                                           return 'CMP_LIKE'
 '('                                              return 'LPAREN'
 ')'                                              return 'RPAREN'
 AS\b                                             return 'AS'
@@ -60,7 +61,7 @@ tql
     ;
 
 compare
-	: CMP_EQUALS CMP_GREATER CMP_GREATEROREQUAL CMP_LESS CMP_LESSOREQUAL
+	: CMP_EQUALS CMP_GREATER CMP_GREATEROREQUAL CMP_LESS CMP_LESSOREQUAL CMP_LIKE
 	;
 
 IDENTIFIER
@@ -197,6 +198,7 @@ compare
     | CMP_GREATEROREQUAL
     | CMP_LESS
     | CMP_LESSOREQUAL
+    | CMP_LIKE
     ;
 
 castConstruct

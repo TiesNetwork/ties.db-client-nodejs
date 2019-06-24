@@ -1,6 +1,6 @@
 {
   "name": "tiesdb-client",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Ties.DB client",
   "main": "index.js",
   "directories": {
@@ -35,6 +35,7 @@
     "gulp-esformatter": "^7.0.0",
     "gulp-fixmyjs": "1.0.2",
     "gulp-jshint": "^2.1.0",
+    "jison-gho": "^0.6.1-215",
     "jsfmt": "^0.5.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "~5.1.0"

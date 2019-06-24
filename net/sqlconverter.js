@@ -82,7 +82,7 @@ function makeFilter(op) {
             break;
         case 'OPERATOR_COMPARE':
             filter.addChild("FunctionName", op.name);
-            filter.makeArgument(op.right);
+            makeArgument(filter, op.right);
             break;
         default:
             throw new Error('Unknown operator: ' + op.nodeType);

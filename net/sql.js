@@ -609,77 +609,78 @@ options: {
 symbols_: {
   "$accept": 0,
   "$end": 1,
-  "AND": 29,
-  "AS": 25,
-  "ASC": 18,
-  "BOOLEAN": 35,
-  "CAST": 30,
+  "AND": 30,
+  "AS": 26,
+  "ASC": 19,
+  "BOOLEAN": 36,
+  "CAST": 31,
   "CMP_EQUALS": 3,
   "CMP_GREATER": 4,
   "CMP_GREATEROREQUAL": 5,
   "CMP_LESS": 6,
   "CMP_LESSOREQUAL": 7,
-  "CMP_NOTEQUALS": 8,
-  "CMP_NOTEQUALS_BASIC": 9,
-  "COMMA": 17,
-  "DECIMAL": 31,
-  "DESC": 19,
-  "DIRECT_IDENTIFIER": 10,
-  "DISTINCT": 14,
-  "DOT": 23,
+  "CMP_LIKE": 8,
+  "CMP_NOTEQUALS": 9,
+  "CMP_NOTEQUALS_BASIC": 10,
+  "COMMA": 18,
+  "DECIMAL": 32,
+  "DESC": 20,
+  "DIRECT_IDENTIFIER": 11,
+  "DISTINCT": 15,
+  "DOT": 24,
   "EOF": 1,
-  "FROM": 13,
-  "HEX_INTEGER": 34,
-  "IDENTIFIER": 41,
-  "IN": 28,
-  "LIMIT": 20,
-  "LPAREN": 26,
-  "NEGATIVE_INTEGER": 33,
-  "NULL": 36,
-  "ORDER_BY": 16,
-  "POSITIVE_INTEGER": 21,
-  "QUOTED_IDENTIFIER": 11,
-  "RPAREN": 27,
-  "SELECT": 12,
-  "STAR": 22,
-  "STRING": 38,
-  "TYPE_HINT": 24,
-  "UUID": 37,
-  "WHERE": 15,
-  "ZERO": 32,
-  "castConstruct": 65,
-  "compare": 40,
-  "dataType": 66,
+  "FROM": 14,
+  "HEX_INTEGER": 35,
+  "IDENTIFIER": 42,
+  "IN": 29,
+  "LIMIT": 21,
+  "LPAREN": 27,
+  "NEGATIVE_INTEGER": 34,
+  "NULL": 37,
+  "ORDER_BY": 17,
+  "POSITIVE_INTEGER": 22,
+  "QUOTED_IDENTIFIER": 12,
+  "RPAREN": 28,
+  "SELECT": 13,
+  "STAR": 23,
+  "STRING": 39,
+  "TYPE_HINT": 25,
+  "UUID": 38,
+  "WHERE": 16,
+  "ZERO": 33,
+  "castConstruct": 66,
+  "compare": 41,
+  "dataType": 67,
   "error": 2,
-  "expressionCompare": 60,
-  "expressionCompareList": 64,
-  "expressionFunction": 61,
-  "expressionUnary": 58,
-  "expressionUnaryList": 62,
-  "expressionUnaryTopColumn": 55,
-  "expressionUnaryWhere": 59,
-  "expressionUnaryWhereList": 63,
-  "integer": 68,
-  "literalTyped": 71,
-  "literalValue": 69,
-  "numericValue": 67,
-  "optColumnExprAlias": 56,
-  "optColumnType": 54,
-  "optDistinctClause": 43,
-  "optLimitClause": 49,
-  "optOrderByClause": 45,
-  "optOrderByOrder": 48,
-  "optWhereClause": 44,
-  "orderByList": 46,
-  "orderByListItem": 47,
-  "qualified_identifier": 52,
-  "selectClause": 42,
-  "selectExpr": 53,
-  "selectExprList": 50,
-  "selectExprListX": 51,
-  "stringValue": 70,
-  "tableExpr": 57,
-  "tql": 39
+  "expressionCompare": 61,
+  "expressionCompareList": 65,
+  "expressionFunction": 62,
+  "expressionUnary": 59,
+  "expressionUnaryList": 63,
+  "expressionUnaryTopColumn": 56,
+  "expressionUnaryWhere": 60,
+  "expressionUnaryWhereList": 64,
+  "integer": 69,
+  "literalTyped": 72,
+  "literalValue": 70,
+  "numericValue": 68,
+  "optColumnExprAlias": 57,
+  "optColumnType": 55,
+  "optDistinctClause": 44,
+  "optLimitClause": 50,
+  "optOrderByClause": 46,
+  "optOrderByOrder": 49,
+  "optWhereClause": 45,
+  "orderByList": 47,
+  "orderByListItem": 48,
+  "qualified_identifier": 53,
+  "selectClause": 43,
+  "selectExpr": 54,
+  "selectExprList": 51,
+  "selectExprListX": 52,
+  "stringValue": 71,
+  "tableExpr": 58,
+  "tql": 40
 },
 terminals_: {
   1: "EOF",
@@ -689,37 +690,38 @@ terminals_: {
   5: "CMP_GREATEROREQUAL",
   6: "CMP_LESS",
   7: "CMP_LESSOREQUAL",
-  8: "CMP_NOTEQUALS",
-  9: "CMP_NOTEQUALS_BASIC",
-  10: "DIRECT_IDENTIFIER",
-  11: "QUOTED_IDENTIFIER",
-  12: "SELECT",
-  13: "FROM",
-  14: "DISTINCT",
-  15: "WHERE",
-  16: "ORDER_BY",
-  17: "COMMA",
-  18: "ASC",
-  19: "DESC",
-  20: "LIMIT",
-  21: "POSITIVE_INTEGER",
-  22: "STAR",
-  23: "DOT",
-  24: "TYPE_HINT",
-  25: "AS",
-  26: "LPAREN",
-  27: "RPAREN",
-  28: "IN",
-  29: "AND",
-  30: "CAST",
-  31: "DECIMAL",
-  32: "ZERO",
-  33: "NEGATIVE_INTEGER",
-  34: "HEX_INTEGER",
-  35: "BOOLEAN",
-  36: "NULL",
-  37: "UUID",
-  38: "STRING"
+  8: "CMP_LIKE",
+  9: "CMP_NOTEQUALS",
+  10: "CMP_NOTEQUALS_BASIC",
+  11: "DIRECT_IDENTIFIER",
+  12: "QUOTED_IDENTIFIER",
+  13: "SELECT",
+  14: "FROM",
+  15: "DISTINCT",
+  16: "WHERE",
+  17: "ORDER_BY",
+  18: "COMMA",
+  19: "ASC",
+  20: "DESC",
+  21: "LIMIT",
+  22: "POSITIVE_INTEGER",
+  23: "STAR",
+  24: "DOT",
+  25: "TYPE_HINT",
+  26: "AS",
+  27: "LPAREN",
+  28: "RPAREN",
+  29: "IN",
+  30: "AND",
+  31: "CAST",
+  32: "DECIMAL",
+  33: "ZERO",
+  34: "NEGATIVE_INTEGER",
+  35: "HEX_INTEGER",
+  36: "BOOLEAN",
+  37: "NULL",
+  38: "UUID",
+  39: "STRING"
 },
 TERROR: 2,
     EOF: 1,
@@ -825,13 +827,11 @@ TERROR: 2,
     },
 productions_: bp({
   pop: u([
-  39,
+  40,
   s,
-  [40, 8],
-  41,
-  41,
+  [41, 9],
   42,
-  43,
+  42,
   43,
   44,
   44,
@@ -840,50 +840,52 @@ productions_: bp({
   46,
   46,
   47,
+  47,
+  48,
   s,
-  [48, 3],
-  49,
-  49,
+  [49, 3],
   50,
   50,
   51,
+  51,
+  52,
   s,
-  [51, 4, 1],
-  54,
-  s,
-  [55, 3],
+  [52, 4, 1],
+  55,
   s,
   [56, 3],
-  57,
-  57,
   s,
-  [58, 5],
+  [57, 3],
+  58,
+  58,
   s,
-  [59, 3],
-  60,
-  60,
+  [59, 5],
+  s,
+  [60, 3],
   61,
-  62,
+  61,
   62,
   63,
   63,
   64,
+  64,
+  65,
   s,
-  [64, 4, 1],
-  67,
+  [65, 4, 1],
+  68,
   s,
-  [68, 4],
+  [69, 4],
   s,
-  [69, 5],
-  70,
+  [70, 5],
   71,
-  71
+  72,
+  72
 ]),
   rule: u([
   2,
-  5,
+  6,
   s,
-  [1, 9],
+  [1, 10],
   8,
   0,
   1,
@@ -919,10 +921,10 @@ productions_: bp({
   [6, 4],
   1,
   3,
-  6,
-  s,
-  [1, 14],
-  3
+  c,
+  [59, 11],
+  c,
+  [26, 5]
 ])
 }),
 performAction: function parser__PerformAction(yystate /* action[1] */, yysp, yyvstack) {
@@ -957,11 +959,11 @@ case 1:
     break;
 
 case 2:
-    /*! Production::    compare : CMP_EQUALS CMP_GREATER CMP_GREATEROREQUAL CMP_LESS CMP_LESSOREQUAL */
+    /*! Production::    compare : CMP_EQUALS CMP_GREATER CMP_GREATEROREQUAL CMP_LESS CMP_LESSOREQUAL CMP_LIKE */
 
-    // default action (generated by JISON mode classic/merge :: 5,VT,VA,-,-,-,-,-,-):
-    this.$ = yyvstack[yysp - 4];
-    // END of default action (generated by JISON mode classic/merge :: 5,VT,VA,-,-,-,-,-,-)
+    // default action (generated by JISON mode classic/merge :: 6,VT,VA,-,-,-,-,-,-):
+    this.$ = yyvstack[yysp - 5];
+    // END of default action (generated by JISON mode classic/merge :: 6,VT,VA,-,-,-,-,-,-)
     break;
 
 case 3:
@@ -978,43 +980,45 @@ case 8:
     /*! Production::    compare : CMP_LESS */
 case 9:
     /*! Production::    compare : CMP_LESSOREQUAL */
-case 28:
+case 10:
+    /*! Production::    compare : CMP_LIKE */
+case 29:
     /*! Production::    selectExprList : selectExprListX */
-case 35:
-    /*! Production::    expressionUnaryTopColumn : expressionFunction */
 case 36:
-    /*! Production::    expressionUnaryTopColumn : castConstruct */
+    /*! Production::    expressionUnaryTopColumn : expressionFunction */
 case 37:
+    /*! Production::    expressionUnaryTopColumn : castConstruct */
+case 38:
     /*! Production::    expressionUnaryTopColumn : IDENTIFIER */
-case 41:
-    /*! Production::    tableExpr : IDENTIFIER */
 case 42:
-    /*! Production::    tableExpr : qualified_identifier */
+    /*! Production::    tableExpr : IDENTIFIER */
 case 43:
+    /*! Production::    tableExpr : qualified_identifier */
+case 44:
     /*! Production::    expressionUnary : expressionFunction */
-case 45:
-    /*! Production::    expressionUnary : castConstruct */
 case 46:
-    /*! Production::    expressionUnary : IDENTIFIER */
+    /*! Production::    expressionUnary : castConstruct */
 case 47:
-    /*! Production::    expressionUnary : literalTyped */
+    /*! Production::    expressionUnary : IDENTIFIER */
 case 48:
+    /*! Production::    expressionUnary : literalTyped */
+case 49:
     /*! Production::    expressionUnaryWhere : expressionFunction */
-case 50:
+case 51:
     /*! Production::    expressionUnaryWhere : literalTyped */
-case 64:
-    /*! Production::    integer : ZERO */
 case 65:
-    /*! Production::    integer : POSITIVE_INTEGER */
+    /*! Production::    integer : ZERO */
 case 66:
-    /*! Production::    integer : NEGATIVE_INTEGER */
+    /*! Production::    integer : POSITIVE_INTEGER */
 case 67:
-    /*! Production::    integer : HEX_INTEGER */
+    /*! Production::    integer : NEGATIVE_INTEGER */
 case 68:
-    /*! Production::    literalValue : stringValue */
+    /*! Production::    integer : HEX_INTEGER */
 case 69:
+    /*! Production::    literalValue : stringValue */
+case 70:
     /*! Production::    literalValue : numericValue */
-case 74:
+case 75:
     /*! Production::    literalTyped : literalValue */
 
     // default action (generated by JISON mode classic/merge :: 1,VT,VA,-,-,-,-,-,-):
@@ -1022,207 +1026,207 @@ case 74:
     // END of default action (generated by JISON mode classic/merge :: 1,VT,VA,-,-,-,-,-,-)
     break;
 
-case 10:
+case 11:
     /*! Production::    IDENTIFIER : DIRECT_IDENTIFIER */
-case 34:
+case 35:
     /*! Production::    optColumnType : TYPE_HINT IDENTIFIER */
-case 39:
-    /*! Production::    optColumnExprAlias : IDENTIFIER */
 case 40:
+    /*! Production::    optColumnExprAlias : IDENTIFIER */
+case 41:
     /*! Production::    optColumnExprAlias : AS IDENTIFIER */
-case 61:
+case 62:
     /*! Production::    dataType : IDENTIFIER */
 
     this.$ = yyvstack[yysp]
     break;
 
-case 11:
+case 12:
     /*! Production::    IDENTIFIER : QUOTED_IDENTIFIER */
 
     this.$ = yyvstack[yysp].replace(/^"|"$/g, '').replace(/""/g, '"');
     break;
 
-case 12:
+case 13:
     /*! Production::    selectClause : SELECT optDistinctClause selectExprList FROM tableExpr optWhereClause optOrderByClause optLimitClause */
 
     this.$ = {nodeType: 'SELECT', distinct: yyvstack[yysp - 6], columns: yyvstack[yysp - 5], from: yyvstack[yysp - 3], where:yyvstack[yysp - 2], orderBy:yyvstack[yysp - 1], limit:yyvstack[yysp]};
     break;
 
-case 13:
+case 14:
     /*! Production::    optDistinctClause : %epsilon */
 
     this.$ = false;
     break;
 
-case 14:
+case 15:
     /*! Production::    optDistinctClause : DISTINCT */
 
     this.$ = true;
     break;
 
-case 15:
+case 16:
     /*! Production::    optWhereClause : %epsilon */
-case 17:
+case 18:
     /*! Production::    optOrderByClause : %epsilon */
-case 25:
+case 26:
     /*! Production::    optLimitClause : %epsilon */
-case 38:
+case 39:
     /*! Production::    optColumnExprAlias : %epsilon */
 
     this.$ = null;
     break;
 
-case 16:
+case 17:
     /*! Production::    optWhereClause : WHERE expressionCompareList */
-case 18:
+case 19:
     /*! Production::    optOrderByClause : ORDER_BY orderByList */
-case 23:
-    /*! Production::    optOrderByOrder : ASC */
 case 24:
+    /*! Production::    optOrderByOrder : ASC */
+case 25:
     /*! Production::    optOrderByOrder : DESC */
-case 26:
-    /*! Production::    optLimitClause : LIMIT POSITIVE_INTEGER */
 case 27:
+    /*! Production::    optLimitClause : LIMIT POSITIVE_INTEGER */
+case 28:
     /*! Production::    selectExprList : STAR */
 
     this.$ = yyvstack[yysp];
     break;
 
-case 19:
+case 20:
     /*! Production::    orderByList : orderByList COMMA orderByListItem */
-case 30:
+case 31:
     /*! Production::    selectExprListX : selectExprListX COMMA selectExpr */
 
     this.$ = yyvstack[yysp - 2]; yyvstack[yysp - 2].push(yyvstack[yysp]);
     break;
 
-case 20:
+case 21:
     /*! Production::    orderByList : orderByListItem */
-case 29:
+case 30:
     /*! Production::    selectExprListX : selectExpr */
 
     this.$ = [yyvstack[yysp]];
     break;
 
-case 21:
+case 22:
     /*! Production::    orderByListItem : IDENTIFIER optOrderByOrder */
 
     this.$ = {expression:yyvstack[yysp - 1], orderByOrder: yyvstack[yysp]};
     break;
 
-case 22:
+case 23:
     /*! Production::    optOrderByOrder : %epsilon */
 
     this.$ = '';
     break;
 
-case 31:
+case 32:
     /*! Production::    qualified_identifier : IDENTIFIER DOT IDENTIFIER */
 
     this.$ = {nodeType: 'QualifiedIdentifier', parent: yyvstack[yysp - 2], value: yyvstack[yysp]};
     break;
 
-case 32:
+case 33:
     /*! Production::    selectExpr : expressionUnaryTopColumn optColumnType optColumnExprAlias */
 
     this.$ = {nodeType: 'COLUMN', value:yyvstack[yysp - 2], type: yyvstack[yysp - 1], alias:yyvstack[yysp]};
     break;
 
-case 33:
+case 34:
     /*! Production::    optColumnType : %epsilon */
 
     this.$ = undefined
     break;
 
-case 44:
+case 45:
     /*! Production::    expressionUnary : LPAREN expressionUnary RPAREN */
-case 49:
+case 50:
     /*! Production::    expressionUnaryWhere : LPAREN expressionUnary RPAREN */
 
     this.$ = yyvstack[yysp - 1]
     break;
 
-case 51:
+case 52:
     /*! Production::    expressionCompare : IDENTIFIER compare expressionUnaryWhere */
 
     this.$ = {'nodeType': 'OPERATOR_COMPARE', 'name': yyvstack[yysp - 1], 'left': yyvstack[yysp - 2], 'right': yyvstack[yysp]}
     break;
 
-case 52:
+case 53:
     /*! Production::    expressionCompare : IDENTIFIER IN LPAREN expressionUnaryWhereList RPAREN */
 
     this.$ = {nodeType: 'OPERATOR_IN', left:yyvstack[yysp - 4], right:yyvstack[yysp - 1]};
     break;
 
-case 53:
+case 54:
     /*! Production::    expressionFunction : IDENTIFIER LPAREN expressionUnaryList RPAREN */
 
     this.$ = {'nodeType': 'FUNCTION', 'name': yyvstack[yysp - 3], 'args': yyvstack[yysp - 1]}
     break;
 
-case 54:
+case 55:
     /*! Production::    expressionUnaryList : expressionUnary */
-case 56:
+case 57:
     /*! Production::    expressionUnaryWhereList : expressionUnaryWhere */
-case 58:
+case 59:
     /*! Production::    expressionCompareList : expressionCompare */
 
     this.$ = [yyvstack[yysp]]
     break;
 
-case 55:
+case 56:
     /*! Production::    expressionUnaryList : expressionUnaryList COMMA expressionUnary */
-case 57:
+case 58:
     /*! Production::    expressionUnaryWhereList : expressionUnaryWhereList COMMA expressionUnaryWhere */
-case 59:
+case 60:
     /*! Production::    expressionCompareList : expressionCompareList AND expressionCompare */
 
     this.$ = yyvstack[yysp - 2]; yyvstack[yysp - 2].push(yyvstack[yysp])
     break;
 
-case 60:
+case 61:
     /*! Production::    castConstruct : CAST LPAREN expressionUnary AS dataType RPAREN */
 
     this.$ = {nodeType: 'CAST', expression:yyvstack[yysp - 3], dataType:yyvstack[yysp - 1]};
     break;
 
-case 62:
+case 63:
     /*! Production::    numericValue : integer */
 
     this.$ = {nodeType: 'INTEGER', value: yyvstack[yysp] }
     break;
 
-case 63:
+case 64:
     /*! Production::    numericValue : DECIMAL */
 
     this.$ = {nodeType: 'DECIMAL', value: yyvstack[yysp] }
     break;
 
-case 70:
+case 71:
     /*! Production::    literalValue : BOOLEAN */
 
     this.$ = {nodeType: 'BOOLEAN', value:yyvstack[yysp]};
     break;
 
-case 71:
+case 72:
     /*! Production::    literalValue : NULL */
 
     this.$ = {nodeType: 'NULL', value:null};
     break;
 
-case 72:
+case 73:
     /*! Production::    literalValue : UUID */
 
     this.$ = {nodeType: 'UUID', value:yyvstack[yysp]};
     break;
 
-case 73:
+case 74:
     /*! Production::    stringValue : STRING */
 
     this.$ = {nodeType: 'STRING', value:yyvstack[yysp].replace(/^'|'$/g, '').replace(/\\(.)/g, '$1')};
     break;
 
-case 75:
+case 76:
     /*! Production::    literalTyped : literalValue TYPE_HINT IDENTIFIER */
 
     this.$ = yyvstack[yysp - 2]; yyvstack[yysp - 2].type = yyvstack[yysp];
@@ -1284,7 +1288,7 @@ table: bt({
   5,
   4,
   0,
-  9,
+  10,
   c,
   [19, 5],
   c,
@@ -1297,7 +1301,7 @@ table: bt({
   1,
   13,
   s,
-  [0, 8],
+  [0, 9],
   4,
   s,
   [0, 6],
@@ -1310,118 +1314,119 @@ table: bt({
   1,
   2,
   c,
-  [35, 4],
+  [36, 4],
   20,
   c,
-  [4, 3]
+  [9, 3],
+  0
 ]),
   symbol: u([
-  12,
-  39,
-  42,
-  1,
-  1,
-  10,
-  11,
-  14,
-  22,
-  30,
+  13,
+  40,
   43,
-  10,
+  1,
+  1,
   11,
-  22,
-  30,
-  41,
-  50,
+  12,
+  15,
+  23,
+  31,
+  44,
+  11,
+  12,
+  23,
+  31,
+  42,
   51,
-  53,
-  55,
-  61,
-  65,
-  13,
-  13,
-  17,
-  10,
-  11,
-  13,
-  17,
-  24,
-  25,
+  52,
   54,
+  56,
+  62,
+  66,
+  14,
+  14,
+  18,
+  11,
+  12,
+  14,
+  18,
+  25,
+  26,
+  55,
   c,
   [7, 6],
-  26,
-  26,
-  10,
+  27,
+  27,
   11,
-  41,
-  52,
-  57,
-  10,
+  12,
+  42,
+  53,
+  58,
   11,
-  30,
-  41,
+  12,
+  31,
+  42,
   c,
   [31, 4],
   c,
   [21, 4],
-  25,
-  41,
-  56,
+  26,
+  42,
+  57,
   c,
   [20, 3],
-  10,
   11,
-  21,
-  26,
+  12,
+  22,
+  27,
   s,
-  [30, 9, 1],
-  41,
-  58,
-  61,
+  [31, 9, 1],
+  42,
+  59,
   62,
-  65,
+  63,
+  66,
   s,
-  [67, 5, 1],
+  [68, 5, 1],
   c,
   [23, 16],
   c,
   [22, 6],
   1,
-  15,
-  16,
-  20,
-  44,
-  c,
-  [5, 4],
-  23,
-  c,
-  [58, 3],
-  17,
-  27,
-  c,
-  [37, 22],
-  17,
-  25,
-  26,
-  27,
-  1,
   16,
   17,
-  20,
-  24,
-  25,
-  27,
-  29,
-  25,
-  1,
-  16,
-  20,
+  21,
   45,
   c,
+  [5, 4],
+  24,
+  c,
+  [58, 3],
+  18,
+  28,
+  c,
+  [37, 22],
+  18,
+  26,
+  27,
+  28,
+  1,
+  17,
+  18,
+  21,
+  25,
+  26,
+  28,
+  30,
+  26,
+  1,
+  17,
+  21,
+  46,
+  c,
   [44, 3],
-  60,
-  64,
+  61,
+  65,
   c,
   [107, 19],
   c,
@@ -1430,65 +1435,66 @@ table: bt({
   [70, 3],
   c,
   [26, 3],
-  41,
-  66,
+  42,
+  67,
   1,
-  20,
-  49,
+  21,
+  50,
   c,
   [7, 3],
-  46,
   47,
-  c,
-  [50, 3],
-  29,
-  s,
-  [3, 7, 1],
-  28,
-  40,
-  27,
-  21,
-  1,
-  17,
-  20,
-  1,
-  s,
-  [17, 4, 1],
   48,
   c,
-  [70, 4],
+  [50, 3],
+  30,
+  s,
+  [3, 8, 1],
+  29,
+  41,
+  28,
+  22,
+  1,
+  18,
+  21,
+  1,
+  s,
+  [18, 4, 1],
+  49,
   c,
-  [66, 4],
+  [71, 4],
   c,
-  [65, 9],
-  59,
-  61,
+  [67, 4],
   c,
-  [64, 5],
-  26,
+  [66, 9],
+  60,
+  62,
+  c,
+  [65, 5],
+  27,
   4,
   c,
   [22, 12],
   c,
   [38, 3],
-  47,
+  48,
   c,
-  [104, 22],
+  [105, 22],
   c,
-  [257, 3],
+  [258, 3],
   c,
   [61, 13],
-  63,
+  64,
   c,
   [22, 5],
   5,
-  27,
-  17,
-  27,
+  28,
+  18,
+  28,
   6,
   c,
   [87, 20],
-  7
+  7,
+  8
 ]),
   type: u([
   2,
@@ -1537,19 +1543,19 @@ table: bt({
   c,
   [41, 10],
   c,
-  [59, 13],
+  [60, 14],
   c,
-  [70, 13],
+  [71, 13],
   c,
-  [65, 20],
+  [66, 20],
   c,
-  [111, 17],
+  [112, 17],
   c,
-  [188, 27],
+  [189, 27],
   c,
-  [173, 34],
+  [174, 34],
   c,
-  [87, 10]
+  [87, 11]
 ]),
   state: u([
   1,
@@ -1608,29 +1614,29 @@ table: bt({
   75,
   76,
   79,
-  91,
+  92,
   66,
-  94,
-  99,
   95,
+  100,
   96,
+  97,
   c,
   [19, 4],
-  98,
-  77,
-  102,
-  37,
-  103,
-  c,
-  [30, 7],
   99,
-  105,
-  96,
+  77,
+  103,
+  37,
   104,
   c,
+  [30, 7],
+  100,
+  106,
+  97,
+  105,
+  c,
   [20, 5],
-  99,
-  111,
+  100,
+  112,
   c,
   [28, 6]
 ]),
@@ -1670,37 +1676,37 @@ table: bt({
   c,
   [42, 4],
   c,
-  [29, 12],
+  [29, 13],
   c,
-  [49, 6],
+  [50, 6],
   c,
-  [48, 18],
+  [49, 18],
   s,
   [2, 12],
   s,
-  [1, 46]
+  [1, 47]
 ]),
   goto: u([
   3,
   4,
-  13,
-  13,
+  14,
+  14,
   6,
-  13,
-  13,
+  14,
+  14,
   16,
   17,
   8,
   15,
   18,
-  28,
+  29,
   19,
   s,
-  [33, 4],
+  [34, 4],
   21,
-  33,
+  34,
   s,
-  [37, 6],
+  [38, 6],
   22,
   23,
   16,
@@ -1710,8 +1716,8 @@ table: bt({
   15,
   16,
   17,
-  38,
-  38,
+  39,
+  39,
   30,
   c,
   [10, 4],
@@ -1725,13 +1731,12 @@ table: bt({
   s,
   [42, 4, 1],
   c,
-  [13, 13],
-  15,
+  [13, 14],
   54,
-  15,
-  15,
+  16,
+  16,
   s,
-  [41, 4],
+  [42, 4],
   55,
   16,
   17,
@@ -1739,71 +1744,71 @@ table: bt({
   57,
   c,
   [26, 13],
-  46,
-  46,
+  47,
+  47,
   22,
-  46,
+  47,
   s,
-  [74, 4],
+  [75, 4],
   60,
   s,
-  [74, 3],
+  [75, 3],
   61,
-  17,
+  18,
   63,
+  18,
   c,
-  [68, 3],
+  [70, 4],
   c,
-  [72, 15],
+  [33, 13],
   69,
   c,
   [16, 4],
-  25,
+  26,
   74,
-  c,
-  [6, 3],
   16,
-  16,
+  s,
+  [17, 4],
   78,
   81,
   s,
-  [84, 4, 1],
+  [84, 5, 1],
   82,
   83,
   80,
-  88,
   89,
-  18,
   90,
-  18,
-  22,
-  22,
-  92,
+  19,
+  91,
+  19,
+  23,
+  23,
   93,
-  22,
+  94,
   c,
-  [46, 5],
-  97,
+  [129, 5],
+  49,
+  98,
   c,
-  [45, 8],
-  100,
+  [46, 8],
   101,
+  102,
   s,
   [3, 12],
   c,
-  [74, 15],
+  [75, 15],
+  22,
   c,
-  [44, 3],
-  c,
-  [42, 10],
-  106,
+  [42, 12],
   107,
-  109,
   108,
   110,
+  109,
+  111,
   c,
   [17, 12],
-  112
+  113,
+  114
 ])
 }),
 defaultActions: bda({
@@ -1830,65 +1835,65 @@ defaultActions: bda({
   73,
   76,
   s,
-  [82, 8, 1],
+  [82, 9, 1],
   s,
-  [91, 6, 1],
-  98,
-  102,
-  105,
-  107,
+  [92, 6, 1],
+  99,
+  103,
+  106,
   108,
-  111,
-  112
+  109,
+  112,
+  114
 ]),
   goto: u([
   1,
-  14,
-  27,
-  29,
-  35,
-  36,
-  10,
-  11,
-  42,
+  15,
+  28,
   30,
-  32,
-  39,
-  34,
-  54,
+  36,
+  37,
+  11,
+  12,
   43,
-  45,
-  47,
-  s,
-  [68, 6, 1],
-  s,
-  [62, 6, 1],
-  40,
-  53,
-  58,
   31,
+  33,
+  40,
+  35,
   55,
   44,
-  75,
-  61,
-  12,
-  20,
-  s,
-  [4, 6, 1],
-  60,
-  26,
-  21,
-  23,
-  24,
-  59,
-  51,
+  46,
   48,
-  50,
-  19,
+  s,
+  [69, 6, 1],
+  s,
+  [63, 6, 1],
+  41,
+  54,
+  59,
+  32,
   56,
-  49,
+  45,
+  76,
+  62,
+  13,
+  21,
+  s,
+  [4, 7, 1],
+  61,
+  27,
+  22,
+  24,
+  25,
+  60,
   52,
+  49,
+  51,
+  20,
   57,
+  50,
+  53,
+  58,
   2
 ])
 }),
@@ -1929,7 +1934,7 @@ parse: function parse(input) {
     var TERROR = this.TERROR;
     var EOF = this.EOF;
     var ERROR_RECOVERY_TOKEN_DISCARD_COUNT = (this.options.errorRecoveryTokenDiscardCount | 0) || 3;
-    var NO_ACTION = [0, 113 /* === table.length :: ensures that anyone using this new state will fail dramatically! */];
+    var NO_ACTION = [0, 115 /* === table.length :: ensures that anyone using this new state will fail dramatically! */];
 
     var lexer;
     if (this.__lexer__) {
@@ -4254,39 +4259,39 @@ EOF: 1,
     simpleCaseActionClusters: {
       /*! Conditions:: INITIAL */
       /*! Rule::       SELECT\b */
-      3: 12,
+      3: 13,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       FROM\b */
-      4: 13,
+      4: 14,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       WHERE\b */
-      5: 15,
+      5: 16,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       DISTINCT\b */
-      6: 14,
+      6: 15,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       ORDER\s+BY\b */
-      7: 16,
+      7: 17,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       LIMIT\b */
-      8: 20,
+      8: 21,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       , */
-      9: 17,
+      9: 18,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       :: */
-      10: 24,
+      10: 25,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       \* */
-      11: 22,
+      11: 23,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       = */
@@ -4309,100 +4314,104 @@ EOF: 1,
       16: 6,
 
       /*! Conditions:: INITIAL */
-      /*! Rule::       \( */
-      17: 26,
+      /*! Rule::       LIKE */
+      17: 8,
 
       /*! Conditions:: INITIAL */
-      /*! Rule::       \) */
+      /*! Rule::       \( */
       18: 27,
 
       /*! Conditions:: INITIAL */
+      /*! Rule::       \) */
+      19: 28,
+
+      /*! Conditions:: INITIAL */
       /*! Rule::       AS\b */
-      19: 25,
+      20: 26,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       CONTAINS\b */
-      20: 'CONTAINS',
+      21: 'CONTAINS',
 
       /*! Conditions:: INITIAL */
       /*! Rule::       CONTAINS\s+KEY\b */
-      21: 'CONTAINS_KEY',
+      22: 'CONTAINS_KEY',
 
       /*! Conditions:: INITIAL */
       /*! Rule::       IN\b */
-      22: 28,
-
-      /*! Conditions:: INITIAL */
-      /*! Rule::       AND\b */
       23: 29,
 
       /*! Conditions:: INITIAL */
-      /*! Rule::       ASC\b */
-      24: 18,
+      /*! Rule::       AND\b */
+      24: 30,
 
       /*! Conditions:: INITIAL */
-      /*! Rule::       DESC\b */
+      /*! Rule::       ASC\b */
       25: 19,
 
       /*! Conditions:: INITIAL */
+      /*! Rule::       DESC\b */
+      26: 20,
+
+      /*! Conditions:: INITIAL */
       /*! Rule::       CAST\b */
-      26: 30,
+      27: 31,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       N?['](\\.|[^'])*['] */
-      27: 38,
+      28: 39,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       [\da-f]{8}(-[\da-f]{4}){3}-[\da-f]{12} */
-      28: 37,
+      29: 38,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       NULL\b */
-      29: 36,
+      30: 37,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       (true|false)\b */
-      30: 35,
+      31: 36,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       -?[0-9]+\.[0-9]*(e-?[1-9]+)? */
-      31: 31,
+      32: 32,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       [a-z_][a-z0-9_]* */
-      32: 10,
-
-      /*! Conditions:: INITIAL */
-      /*! Rule::       ["](|[^"])*["] */
       33: 11,
 
       /*! Conditions:: INITIAL */
+      /*! Rule::       ["](|[^"])*["] */
+      34: 12,
+
+      /*! Conditions:: INITIAL */
       /*! Rule::       0x[0-9a-f]+ */
-      34: 34,
+      35: 35,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       [1-9]\d* */
-      35: 21,
+      36: 22,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       -[1-9]\d* */
-      36: 33,
+      37: 34,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       0\b */
-      37: 32,
+      38: 33,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       \. */
-      38: 23,
+      39: 24,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       $ */
-      39: 1,
+      40: 1,
 
       /*! Conditions:: INITIAL */
       /*! Rule::       . */
-      40: 'INVALID'
+      41: 'INVALID'
     },
 
     rules: [
@@ -4423,30 +4432,31 @@ EOF: 1,
       /* 14: */  /^(?:>)/i,
       /* 15: */  /^(?:<=)/i,
       /* 16: */  /^(?:<)/i,
-      /* 17: */  /^(?:\()/i,
-      /* 18: */  /^(?:\))/i,
-      /* 19: */  /^(?:AS\b)/i,
-      /* 20: */  /^(?:CONTAINS\b)/i,
-      /* 21: */  /^(?:CONTAINS\s+KEY\b)/i,
-      /* 22: */  /^(?:IN\b)/i,
-      /* 23: */  /^(?:AND\b)/i,
-      /* 24: */  /^(?:ASC\b)/i,
-      /* 25: */  /^(?:DESC\b)/i,
-      /* 26: */  /^(?:CAST\b)/i,
-      /* 27: */  /^(?:N?['](\\.|[^'])*['])/i,
-      /* 28: */  /^(?:[\da-f]{8}(-[\da-f]{4}){3}-[\da-f]{12})/i,
-      /* 29: */  /^(?:NULL\b)/i,
-      /* 30: */  /^(?:(true|false)\b)/i,
-      /* 31: */  /^(?:-?\d+\.\d*(e-?[1-9]+)?)/i,
-      /* 32: */  /^(?:[_a-z][\d_a-z]*)/i,
-      /* 33: */  /^(?:["](|[^"])*["])/i,
-      /* 34: */  /^(?:0x[\da-f]+)/i,
-      /* 35: */  /^(?:[1-9]\d*)/i,
-      /* 36: */  /^(?:-[1-9]\d*)/i,
-      /* 37: */  /^(?:0\b)/i,
-      /* 38: */  /^(?:\.)/i,
-      /* 39: */  /^(?:$)/i,
-      /* 40: */  /^(?:.)/i
+      /* 17: */  /^(?:LIKE)/i,
+      /* 18: */  /^(?:\()/i,
+      /* 19: */  /^(?:\))/i,
+      /* 20: */  /^(?:AS\b)/i,
+      /* 21: */  /^(?:CONTAINS\b)/i,
+      /* 22: */  /^(?:CONTAINS\s+KEY\b)/i,
+      /* 23: */  /^(?:IN\b)/i,
+      /* 24: */  /^(?:AND\b)/i,
+      /* 25: */  /^(?:ASC\b)/i,
+      /* 26: */  /^(?:DESC\b)/i,
+      /* 27: */  /^(?:CAST\b)/i,
+      /* 28: */  /^(?:N?['](\\.|[^'])*['])/i,
+      /* 29: */  /^(?:[\da-f]{8}(-[\da-f]{4}){3}-[\da-f]{12})/i,
+      /* 30: */  /^(?:NULL\b)/i,
+      /* 31: */  /^(?:(true|false)\b)/i,
+      /* 32: */  /^(?:-?\d+\.\d*(e-?[1-9]+)?)/i,
+      /* 33: */  /^(?:[_a-z][\d_a-z]*)/i,
+      /* 34: */  /^(?:["](|[^"])*["])/i,
+      /* 35: */  /^(?:0x[\da-f]+)/i,
+      /* 36: */  /^(?:[1-9]\d*)/i,
+      /* 37: */  /^(?:-[1-9]\d*)/i,
+      /* 38: */  /^(?:0\b)/i,
+      /* 39: */  /^(?:\.)/i,
+      /* 40: */  /^(?:$)/i,
+      /* 41: */  /^(?:.)/i
     ],
 
     conditions: {
@@ -4492,7 +4502,8 @@ EOF: 1,
           37,
           38,
           39,
-          40
+          40,
+          41
         ],
 
         inclusive: true
