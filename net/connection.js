@@ -9,7 +9,12 @@ const Record = require('../request/record');
 class Connection {
 
     constructor(url){
-        this.socket = new WebSocketClient();;
+        this.socket = new WebSocketClient({
+        	fragmentOutgoingMessages: false,
+        	maxReceivedFrameSize: 4*1024*1024*1024,
+        	maxReceivedMessageSize: 4*1024*1024*1024,
+        });
+
         this.requestId = 0;
         this.requests = {};
         this.connecting = false;
