@@ -23,14 +23,15 @@ class Context {
         let tagCheque = new Tag('Cheque');
 
         let sigData = this.chequeTrackingSession.signCheque(tagTablespaceName.getValue(), tagTableName.getValue(), amount);
-        tagCheque.addChild('TablespaceName', sigData.tablespaceName);
-        tagCheque.addChild('TableName', sigData.tableName);
+
+        tagCheque.addChild('ChequeVersion', 1);
+        //tagCheque.addChild('TablespaceName', sigData.tablespaceName); // Optional (Defaults to Entry.TablespaceName)
+        //tagCheque.addChild('TableName', sigData.tableName); // Optional (Defaults to Entry.TableName)
         tagCheque.addChild('ChequeSession', sigData.sessionId);
         tagCheque.addChild('ChequeNumber', sigData.nonce);
         tagCheque.addChild('ChequeCropAmount', sigData.amount);
-        tagCheque.addChild('Signer', sigData.signerAddress);
+        //tagCheque.addChild('Signer', sigData.signerAddress); // Optional (Defaults to Entry.Header.Signer)
         tagCheque.addChild('Signature', sigData.signature);
-        tagCheque.addChild('ChequeVersion', 1);
 
         tagChequeList.addChild(tagCheque);
         tagEntry.addChild(tagChequeList);

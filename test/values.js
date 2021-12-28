@@ -6,18 +6,17 @@ const TiesDB = require('../index'),
 describe('request', function () {
 
     let pk = Buffer.from('e0a61e5ad74fc154927e8412c7f03528134f755e7eb45554eb7a99c2744ac34e', 'hex');
+    let args = [
+        "01234567890abcdef01234567890abcdef012345",
+        "01234567890abcdef01234567890abcd",
+        "someTablespaceName",
+        "someTableName",
+        110,
+        1,
+    ];
 
     describe('ChequeSigner', function () {
         //debugger;
-
-        let args = [
-            "01234567890abcdef01234567890abcdef012345",
-            "01234567890abcdef01234567890abcd",
-            "someTablespaceName",
-            "someTableName",
-            110,
-            1,
-        ];
 
         const chequeFactory = codec.cheque.newChequeFactory(pk);
         const refSig1 = '0fe79bd6071edbfeb1a7afb669d2092bd1e35902b488dd212d3f7c2e0550a2fb183485b6d406906be1d358ce5f26936ca1c3b2df646a463f3c1c1f57e290d02d1c';

@@ -73,10 +73,10 @@ function newChequeFactory(pk) {
     const signerAddress = etu.pubToAddress(pubKey);
 
     function signChequeHash(hash) {
-        //console.log(' Hash: 0x' + hash.toString('hex'));
-        //console.log('Address: 0x' + etu.pubToAddress(pubKey).toString('hex'));
+        // console.log(' Hash: 0x' + hash.toString('hex'));
+        // console.log('Address: 0x' + etu.pubToAddress(pubKey).toString('hex'));
         hash = hashMessage(hash);
-        //console.log('HashMessage: 0x' + hash.toString('hex'));
+        // console.log('HashMessage: 0x' + hash.toString('hex'));
         {
             const signature = keyPair.sign((hash), { canonical: true });
             const sigParts = [
