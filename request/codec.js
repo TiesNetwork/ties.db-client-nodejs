@@ -2,6 +2,7 @@ let ebml = require('universal-ebml');
 let schema = require('./schema.js');
 let etu = require('ethereumjs-util');
 const createKeccakHash = require('keccak');
+const chq = require('./cheque.js');
 
 let encoder = new ebml.Encoder(null, schema);
 let encodedData;
@@ -299,22 +300,63 @@ function checkCheques(entry, myAddress) {
     let cheques = list.getChildren('Cheque');
     for(let i=0; i<cheques.length; ++i) {
         let cheque = cheques[i];
-        let addr = getSigner(cheque);
+        let addr = getSigner(cheque, getChequeHash(cheque));
 
         if(Buffer.compare(addr, myAddress) != 0)
             throw new Error(`Cheque is not mine: ${cheque.getChild('ChequeRange').data.toString('hex')}-${cheque.getChild('ChequeRange').value}`);
     }
 }
 
-function sign(msgHash, pk) {
-    let sig = etu.secp256k1.sign(msgHash, pk);
+function sign(msgHash, pk, options) {
+    let sig = etu.secp256k1.sign(msgHash, pk, options);
     let sigBuf = Buffer.allocUnsafe(65);
     sig.signature.copy(sigBuf, 0, 0, 64);
     sigBuf[64] = sig.recovery + 37; //we need [37, 38] (EIP-155)
     return sigBuf;
 }
 
+function sha3(data, toBuffer) {
+    if (typeof data === 'string') {
+        data = Buffer.from(data, 'utf8');
+    } else if (!Buffer.isBuffer(data)) {
+        throw new Error('Data input must be type \'String\' or Buffer \'Object\' instance got ' + typeof data + ', if your trying to hash a BigNumber or BN object, convert it to a string by using \'value.toString(10)\'.');
+    }
+    if (toBuffer === true) {
+        return createKeccakHash('keccak256').update(data).digest();
+    } else {
+        return '0x' + createKeccakHash('keccak256').update(data).digest().toString('hex');
+    }
+}
+function privToAddress(privateKey) {
+    let pubKey = etu.secp256k1.publicKeyCreate(privateKey, false).slice(1);
+    return etu.pubToAddress(pubKey);
+}
+function toChecksumAddress(address) {
+    if(Buffer.isBuffer(address) && address.length === 20) {
+        address = '0x' + address.toString('hex');
+    }
+    if (typeof (address) !== 'string' || !address.match(/^0x[0-9A-Fa-f]{40}$/)) {
+        throw new Error('Invalid address value ' + JSON.stringify(address) + ' not a valid hex string');
+    }
+
+    address = address.substring(2).toLowerCase();
+    const hashed = sha3(address, true);
+
+    address = address.split('');
+    for (let i = 0; i < 40; i += 2) { // eslint-disable-line
+        if ((hashed[i >> 1] >> 4) >= 8) {
+            address[i] = address[i].toUpperCase();
+        }
+        if ((hashed[i >> 1] & 0x0f) >= 8) {
+            address[i + 1] = address[i + 1].toUpperCase();
+        }
+    }
+
+    return '0x' + address.join('');
+}
+
 module.exports = {
+    cheque: chq,
     decode,
     encode,
     checkEntry,
@@ -323,4 +365,6 @@ module.exports = {
     computeFieldsHash,
     getSigner,
     sign,
+    privToAddress,
+    toChecksumAddress,
 };

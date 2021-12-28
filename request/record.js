@@ -116,8 +116,8 @@ class Record {
         let fl = this.getFieldList(fieldNames);
         let fldhash = codec.computeFieldsHash(fl);
 
-        entryHeader.addChild('EntryTablespaceName', this.tablespace);
-        entryHeader.addChild('EntryTableName', this.table);
+        entryHeader.addChild('TablespaceName', this.tablespace);
+        entryHeader.addChild('TableName', this.table);
         entryHeader.addChild('EntryTimestamp', new Date());
         entryHeader.addChild('EntryVersion', this.prevVersion + 1);
         entryHeader.addChild('EntryFldHash', fldhash);
@@ -127,7 +127,7 @@ class Record {
         entryHeader.addChild('Signer', etu.privateToAddress(pk));
 
         let hash = codec.computeHashOnData(entryHeader).digest();
-        console.log("Hash of insert data: " + hash.toString('hex'))
+        //console.log("Hash of insert data: " + hash.toString('hex'))
 
         let sig = codec.sign(hash, pk);
         entryHeader.addChild('Signature', sig);
@@ -141,8 +141,8 @@ class Record {
         let hash = codec.checkEntry(tagEntry);
 
         let header = tagEntry.getChild("EntryHeader");
-        this.table = header.getChild("EntryTableName").getValue();
-        this.tablespace = header.getChild("EntryTablespaceName").getValue();
+        this.tablespace = header.getChild("TablespaceName").getValue();
+        this.table = header.getChild("TableName").getValue();
         this.prevHash = hash;
         this.prevVersion = header.getChild("EntryVersion").getValue();
         this.signer = header.getChild("Signer").getValue();

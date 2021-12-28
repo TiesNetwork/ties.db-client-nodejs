@@ -5,18 +5,22 @@ const sqlConverter = require('./sqlconverter');
 const Tag = codec.Tag;
 const C = require('../request/constants');
 const Record = require('../request/record');
+const Context = require('../request/context');
 
 class Connection {
 
-    constructor(url){
+    constructor(contractAddress, url){
         this.socket = new WebSocketClient({
         	fragmentOutgoingMessages: false,
         	maxReceivedFrameSize: 4*1024*1024*1024,
         	maxReceivedMessageSize: 4*1024*1024*1024,
         });
 
+        this.contractAddress = contractAddress;
+
         this.requestId = 0;
         this.requests = {};
+        this.contexts = {};
         this.connecting = false;
         this.header = Buffer.from('C001BA5E1225EFFF0000000000000001', 'hex');
         this.consistency = C.Consistency.QUORUM;
@@ -105,9 +109,20 @@ class Connection {
         });
     }
 
+    __getContext(pk) {
+        let key = pk.toString('hex');
+        if (key in this.contexts) {
+            return this.contexts[key];
+        } else {
+            return this.contexts[key] = new Context(pk,this.contractAddress);
+        }
+    }
+
     modify(records, pk) {
+        let context = Buffer.isBuffer(pk) ? this.__getContext(pk) : pk;
         let builder = new Builder(records);
-        let tag = builder.buildModification(pk, ++this.requestId);
+        let tag = builder.buildModification(context.pk, ++this.requestId);
+        tag.getChildren("Entry").forEach((entry) => context.writeEntryCheque(entry));
         return this.__sendRequest(tag);
     }
 

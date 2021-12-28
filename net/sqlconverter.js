@@ -25,11 +25,11 @@ function makeRequest(requestTag, ast, defaultTablespace) {
     if(typeof from === 'string'){
         if(!defaultTablespace)
             throw new Error('No tablespace specified and no default tablespace set');
-        requestTag.addChild("RecollectionTablespaceName", defaultTablespace);
-        requestTag.addChild("RecollectionTableName", from);
+        requestTag.addChild("TablespaceName", defaultTablespace);
+        requestTag.addChild("TableName", from);
     }else if(from.nodeType === 'QualifiedIdentifier') {
-        requestTag.addChild("RecollectionTablespaceName", from.parent);
-        requestTag.addChild("RecollectionTableName", from.value);
+        requestTag.addChild("TablespaceName", from.parent);
+        requestTag.addChild("TableName", from.value);
     }
 
     //Set COLUMNS to retrieve

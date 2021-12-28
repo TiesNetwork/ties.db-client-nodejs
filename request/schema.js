@@ -49,18 +49,7 @@ let _the_schema = {
         "type": "m",
         "description": ""
     },
-    "RecollectionTablespaceName": {
-        "context": ["RecollectionRequest"],
-        "tag": "80",
-        "type": "8",
-        "description": ""
-    },
-    "RecollectionTableName": {
-        "context": ["RecollectionRequest"],
-        "tag": "82",
-        "type": "8",
-        "description": ""
-    },
+
     "RetrieveList": {
         "context": ["RecollectionRequest"],
         "tag": "83",
@@ -181,18 +170,33 @@ let _the_schema = {
         "type": "u",
         "description": "Request ID unique for a given connection"
     },
+
     "Signature": {
-        "context": ["EntryHeader"],
+        "context": ["EntryHeader", "Cheque"],
         "tag": "fe",
         "type": "b",
         "description": ""
     },
     "Signer": {
-        "context": ["EntryHeader"],
+        "context": ["EntryHeader", "Cheque"],
         "tag": "fc",
         "type": "b",
         "description": ""
     },
+
+    "TablespaceName": {
+        "context": ["RecollectionRequest", "EntryHeader", "Cheque"],
+        "tag": "80",
+        "type": "8",
+        "description": ""
+    },
+    "TableName": {
+        "context": ["RecollectionRequest", "EntryHeader", "Cheque"],
+        "tag": "82",
+        "type": "8",
+        "description": ""
+    },
+
     "Entry": {
         "context": ["ModificationRequest", "RecollectionResult"],
         "tag": "e1",
@@ -203,18 +207,6 @@ let _the_schema = {
         "context": ["Entry"],
         "tag": "e1",
         "type": "m",
-        "description": ""
-    },
-    "EntryTablespaceName": {
-        "context": ["EntryHeader"],
-        "tag": "80",
-        "type": "8",
-        "description": ""
-    },
-    "EntryTableName": {
-        "context": ["EntryHeader"],
-        "tag": "82",
-        "type": "8",
         "description": ""
     },
     "EntryTimestamp": {
@@ -297,44 +289,36 @@ let _the_schema = {
         "type": "m",
         "description": ""
     },
-    "ChequeRange": {
+    "ChequeVersion": {
         "context": ["Cheque"],
-        "tag": "80",
+        "tag": "c0",
+        "type": "u",
+        "description": ""
+    },
+    "ChequeNetwork": {
+        "context": ["Cheque"],
+        "tag": "c2",
+        "type": "u",
+        "description": ""
+    },
+    "ChequeSession": {
+        "context": ["Cheque"],
+        "tag": "c4",
         "type": "b", // uuid
         "description": ""
     },
     "ChequeNumber": {
         "context": ["Cheque"],
-        "tag": "82",
+        "tag": "c6",
         "type": "u",
         "description": ""
     },
-    "ChequeTimestamp": {
+    "ChequeCropAmount": {
         "context": ["Cheque"],
-        "tag": "84",
-        "type": "d",
-        "description": ""
-    },
-    "ChequeAmount": {
-        "context": ["Cheque"],
-        "tag": "86",
+        "tag": "c8",
         "type": "u",
         "description": ""
     },
-
-    "AddressList": {
-        "context": ["Cheque"],
-        "tag": "a1",
-        "type": "m",
-        "description": ""
-    },
-    "Address": {
-        "context": ["AddressList"],
-        "tag": "a0",
-        "type": "b",
-        "description": ""
-    },
-
 };
 
 let Schema = require('universal-ebml').Schema;
