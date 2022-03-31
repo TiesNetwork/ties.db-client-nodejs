@@ -86,6 +86,11 @@ class Connection {
         return this.waitForConnection;
     }
 
+    ___sendRequest(/*Tag*/ tagRoot) {
+        tagRoot.addChild(new Tag({name: 'MessageId', value: ++this.requestId}));
+        return this.__sendRequest(tagRoot);
+    }
+
     __sendRequest(/*Tag*/ tagRoot) {
         let self = this;
         const requestId = self.requestId;

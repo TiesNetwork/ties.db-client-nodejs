@@ -19,6 +19,17 @@ let _the_schema = {
         "type": "m",
         "description": "Response to RecollectionRequest"
     },
+    "BillingRequest": {
+        "tag": "11504159",
+        "type": "m",
+        "description": ""
+    },
+    "BillingResponse": {
+        "tag": "12504159",
+        "type": "m",
+        "description": ""
+    },
+
     "RecollectionResult": {
         "context": ["RecollectionResponse"],
         "tag": "a1",
@@ -165,7 +176,7 @@ let _the_schema = {
         "description": ""
     },
     "MessageId": {
-        "context": ["ModificationRequest","ModificationResponse","RecollectionRequest","RecollectionResponse","Error"],
+        "context": ["ModificationRequest","ModificationResponse","RecollectionRequest","RecollectionResponse","BillingRequest","BillingResponse","Error"],
         "tag": "ec",
         "type": "u",
         "description": "Request ID unique for a given connection"
@@ -278,7 +289,7 @@ let _the_schema = {
     },
 
     "ChequeList": {
-        "context": ["Entry"],
+        "context": ["Entry", "BillingResponse"],
         "tag": "c1",
         "type": "m",
         "description": ""
@@ -316,6 +327,19 @@ let _the_schema = {
     "ChequeCropAmount": {
         "context": ["Cheque"],
         "tag": "c8",
+        "type": "u",
+        "description": ""
+    },
+
+    "BillingCountLimit": {
+        "context": ["BillingRequest"],
+        "tag": "80",
+        "type": "u",
+        "description": ""
+    },
+    "BillingAmountThreshold": {
+        "context": ["BillingRequest"],
+        "tag": "82",
         "type": "u",
         "description": ""
     },
